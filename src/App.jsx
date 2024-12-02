@@ -1,16 +1,11 @@
-import { Canvas } from "@react-three/fiber";
-import styled from "styled-components";
+import Header from "./partials/Header.jsx";
 
 const App = () => {
-  return <Canv>App</Canv>;
+  return (
+    <main>
+      <Header />
+    </main>
+  );
 };
-
-const Canv = styled(Canvas)`
-  height: "100vh";
-  width: "100vw";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 export default App;
