@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { navLinks } from "../constants";
+import { navLinks } from "../../constants/index.js";
 import { useState, useEffect } from "react";
 
 const NavItems = () => {
@@ -21,7 +21,9 @@ const Header = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700);
+      const isMobileView = window.innerWidth <= 700;
+      setIsMobile(isMobileView);
+      if (!isMobileView) setIsOpen(false);
     };
 
     window.addEventListener("resize", handleResize);
@@ -48,14 +50,20 @@ const Header = () => {
   );
 };
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
+  color: #c5c5c5;
   display: flex;
   justify-content: space-between;
-  background-color: red;
+  /* background-color: red; */
   width: 100%;
   align-items: center;
   padding: 0.5rem 1rem;
   position: relative;
+
+  h1:hover {
+    cursor: pointer;
+    color: white;
+  }
 
   button {
     background-color: transparent;
@@ -66,10 +74,14 @@ const HeaderContainer = styled.div`
 `;
 
 const Navbar = styled.ul`
-  color: white;
   display: flex;
   list-style: none;
   gap: 1rem;
+
+  li:hover {
+    cursor: pointer;
+    color: white;
+  }
 
   @media (max-width: 700px) {
     flex-direction: column;

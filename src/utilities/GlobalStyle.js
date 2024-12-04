@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     --300px: 18.75rem;
   }
 
-  html, body, #root {
+  html, body, main, #root {
     height: 100%;
     margin: 0;
     padding: 0;
