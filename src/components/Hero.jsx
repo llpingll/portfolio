@@ -4,23 +4,42 @@ import { Suspense } from "react";
 import HackerRoom from "./HackerRoom.jsx";
 import CanvasLoader from "./CanvasLoader.jsx";
 import { Canvas } from "@react-three/fiber";
+import { useMediaQuery } from "react-responsive";
+import { calculateSizes } from "../constants/index.js";
+import Target from "./Target.jsx";
+import ReactLogo from "./ReactLogo.jsx";
+import Cube from "./Cube.jsx";
+import Rings from "./Rings.jsx";
+// import { useControls } from "leva";
 
 const Hero = () => {
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 760 });
+  const isTablet = useMediaQuery({ maxWidth: 1024 });
+
+  const sizes = calculateSizes(isSmall, isMobile, isTablet);
+
   return (
     <Section>
-      <p>
+      <h1>
         Hi! I&apos;m Lui <span className="waving-hand">🖐️</span>
-      </p>
+      </h1>
       <Canvas className="canvas">
         <Suspense fallback={<CanvasLoader />}>
-          <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+          <PerspectiveCamera makeDefault position={[0, 0, 20]} />
           <HackerRoom
-            scale={0.11}
-            position={[0, -5, 0]}
-            rotation={[0, 110, 0]}
+            scale={sizes.deskScale}
+            position={sizes.deskPosition}
+            rotation={[0.5, Math.PI, 0]}
           />
+          <group>
+            <Target position={sizes.targetPosition} />
+            <ReactLogo position={sizes.reactLogoPosition} />
+            <Cube position={sizes.cubePosition} />
+            <Rings position={sizes.ringPosition} />
+          </group>
           <ambientLight intensity={1} />
-          <directionalLight position={[10, 10, 10]} intensity={0.5} />
+          <directionalLight position={[10, 10, 10]} intensity={1} />
         </Suspense>
       </Canvas>
     </Section>
@@ -32,7 +51,6 @@ const Section = styled.section`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 
   .waving-hand {
