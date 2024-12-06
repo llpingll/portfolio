@@ -10,6 +10,7 @@ import Target from "./Target.jsx";
 import ReactLogo from "./ReactLogo.jsx";
 import Cube from "./Cube.jsx";
 import Rings from "./Rings.jsx";
+import HeroCamera from "./HeroCamera.jsx";
 // import { useControls } from "leva";
 
 const Hero = () => {
@@ -27,11 +28,13 @@ const Hero = () => {
       <Canvas className="canvas">
         <Suspense fallback={<CanvasLoader />}>
           <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-          <HackerRoom
-            scale={sizes.deskScale}
-            position={sizes.deskPosition}
-            rotation={[0.5, Math.PI, 0]}
-          />
+          <HeroCamera isMobile={isMobile}>
+            <HackerRoom
+              scale={sizes.deskScale}
+              position={sizes.deskPosition}
+              rotation={[0.5, Math.PI, 0]}
+            />
+          </HeroCamera>
           <group>
             <Target position={sizes.targetPosition} />
             <ReactLogo position={sizes.reactLogoPosition} />
@@ -52,6 +55,10 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h1 {
+    font-size: var(--32px);
+  }
 
   .waving-hand {
     animation-name: wave-animation;

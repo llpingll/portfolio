@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.cdnfonts.com/css/general-sans');
+
   :root{
     --16px: 1rem;
     --24px: 1.5rem;
@@ -14,6 +16,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: black;
+  }
+
+  body {
+    background: #010103;
+    font-family: 'General Sans', sans-serif;
   }
 
   *,
