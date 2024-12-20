@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, Stars } from "@react-three/drei";
 import { Suspense } from "react";
 import HackerRoom from "./HackerRoom.jsx";
 import CanvasLoader from "./CanvasLoader.jsx";
@@ -21,11 +21,12 @@ const Hero = () => {
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
-    <Section>
+    <Section className="stars">
       <h1>
         Hi! I&apos;m Lui <span className="waving-hand">🖐️</span>
       </h1>
       <Canvas className="canvas">
+        {/* <Stars /> */}
         <Suspense fallback={<CanvasLoader />}>
           <PerspectiveCamera makeDefault position={[0, 0, 20]} />
           <HeroCamera isMobile={isMobile}>
@@ -45,6 +46,10 @@ const Hero = () => {
           <directionalLight position={[10, 10, 10]} intensity={1} />
         </Suspense>
       </Canvas>
+      <ContactButton href="#contact">
+        {" "}
+        <button>Lets work together</button>
+      </ContactButton>
     </Section>
   );
 };
@@ -66,6 +71,42 @@ const Section = styled.section`
     animation-iteration-count: infinite;
     transform-origin: 70% 70%;
     display: inline-block;
+  }
+`;
+
+const ContactButton = styled.a`
+  position: absolute;
+  right: center;
+  bottom: 3rem;
+
+  button {
+    background-color: #1b1b1b;
+    color: white;
+    border: none;
+    font-size: var(--32px);
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: white;
+    color: #1b1b1b;
+  }
+
+  @media (max-width: 440px) {
+    bottom: 1rem;
+    scale: 0.7;
+  }
+
+  @media (min-width: 441px) and (max-width: 760px) {
+    bottom: 2rem;
+    scale: 0.8;
+  }
+
+  @media (min-width: 761px) and (max-width: 1024px) {
+    bottom: 3rem;
   }
 `;
 
