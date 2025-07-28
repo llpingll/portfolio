@@ -11,6 +11,7 @@ import ReactLogo from "./ReactLogo.jsx";
 import Cube from "./Cube.jsx";
 import Rings from "./Rings.jsx";
 import HeroCamera from "./HeroCamera.jsx";
+import Header from "./partials/Header.jsx";
 // import { useControls } from "leva";
 
 const Hero = () => {
@@ -22,6 +23,7 @@ const Hero = () => {
 
   return (
     <Section className="stars">
+      <Header />
       <h1>
         Hi! I&apos;m Lui <span className="waving-hand">🖐️</span>
       </h1>
@@ -60,6 +62,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 
   h1 {
     font-size: var(--32px);

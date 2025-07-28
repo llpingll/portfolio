@@ -1,12 +1,12 @@
-import Header from "./components/partials/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import styled from "styled-components";
+import About from "./components/About.jsx";
 
 const App = () => {
   return (
     <Main>
-      <Header />
       <Hero />
+      <About/>
     </Main>
   );
 };

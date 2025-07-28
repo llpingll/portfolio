@@ -12,15 +12,30 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, main, #root {
-    height: 100%;
+    // height: 100%;
     margin: 0;
     padding: 0;
     background-color: black;
+    // overflow: hidden;
   }
 
   body {
     background: #010103;
     font-family: 'General Sans', sans-serif;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  body::-webkit-scrollbar,
+  html::-webkit-scrollbar,
+  main::-webkit-scrollbar,
+  #root::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  body, html, main, #root {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
   }
 
   *,
