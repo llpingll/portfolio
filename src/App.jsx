@@ -1,6 +1,6 @@
-import Hero from "./components/Hero.jsx";
+import Hero from "./sections/Hero.jsx";
 import styled from "styled-components";
-import About from "./components/About.jsx";
+import About from "./sections/About.jsx";
 
 const App = () => {
   return (

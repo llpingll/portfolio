@@ -51,14 +51,18 @@ const Header = () => {
 };
 
 const HeaderContainer = styled.header`
-  color: #c5c5c5;
+  color: #a2a2a2ff;
   display: flex;
   justify-content: space-between;
   /* background-color: red; */
   width: 100%;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 2rem;
   position: relative;
+
+  h1 {
+    font-size: var(--24px);
+  }
 
   h1:hover {
     cursor: pointer;

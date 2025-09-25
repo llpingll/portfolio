@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import { PerspectiveCamera, Stars } from "@react-three/drei";
 import { Suspense } from "react";
-import HackerRoom from "./HackerRoom.jsx";
-import CanvasLoader from "./CanvasLoader.jsx";
+import HackerRoom from "../components/HackerRoom.jsx";
+import CanvasLoader from "../components/CanvasLoader.jsx";
 import { Canvas } from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
-import Target from "./Target.jsx";
-import ReactLogo from "./ReactLogo.jsx";
-import Cube from "./Cube.jsx";
-import Rings from "./Rings.jsx";
-import HeroCamera from "./HeroCamera.jsx";
-import Header from "./partials/Header.jsx";
+import Target from "../components/Target.jsx";
+import ReactLogo from "../components/ReactLogo.jsx";
+import Cube from "../components/Cube.jsx";
+import Rings from "../components/Rings.jsx";
+import HeroCamera from "../components/HeroCamera.jsx";
+import Header from "../components/partials/Header.jsx";
 // import { useControls } from "leva";
 
 const Hero = () => {
@@ -24,9 +24,15 @@ const Hero = () => {
   return (
     <Section className="stars">
       <Header />
-      <h1>
-        Hi! I&apos;m Lui <span className="waving-hand">🖐️</span>
-      </h1>
+      <div>
+        <h1 className="hi-text">
+          Hi! I&apos;m Lui <span className="waving-hand">🖐️</span>
+        </h1>
+        <h1>
+          Building Projects & Brands
+        </h1>
+      </div>
+
       <Canvas className="canvas">
         {/* <Stars /> */}
         <Suspense fallback={<CanvasLoader />}>
@@ -64,8 +70,22 @@ const Section = styled.section`
   align-items: center;
   height: 100vh;
 
+  & > div:first-of-type {
+    text-align: center;
+    padding: 2rem 0;
+
+  .hi-text {
+    font-weight: 500;
+  }
+
   h1 {
     font-size: var(--32px);
+  }
+
+  h1:nth-of-type(2) {
+    font-size: var(--48px);
+    color: #a2a2a2ff;
+    margin-top: 1.5rem;
   }
 
   .waving-hand {

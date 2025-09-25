@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     --24px: 1.5rem;
     --32px: 2rem;
     --40px: 2.5rem;
+    --48px: 3rem;
     --300px: 18.75rem;
   }
 
@@ -17,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: black;
     // overflow: hidden;
+  }
+
+  main {
+    max-width: 1280px;
+    margin: 0 auto;
   }
 
   body {
