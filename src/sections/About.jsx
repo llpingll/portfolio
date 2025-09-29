@@ -62,20 +62,12 @@ const AboutContainer = styled.section`
   border: 1px solid #f30c0c;
   display: grid;
   gap: 1.5rem;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 760px;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 5rem 2.5rem;
-
-  // .globe-wrapper {
-  //   width: 100%;
-  // }
-
-  // .globe-wrapper canvas {
-  //   // max-width: 100% !important;
-  //   // max-height: 100% !important;
-  // }
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
@@ -83,8 +75,8 @@ const AboutContainer = styled.section`
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2fr 1fr 1fr 1fr;
-    max-height: 80vh;
+    grid-template-rows: 3fr 1fr 1fr 1fr;
+    // max-height: 80vh;
     .contact-card {
       grid-row: span 2;
       // background-color: green;

@@ -253,31 +253,31 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     cubePosition: isSmall
       ? [3.5, -5.7, 0]
       : isMobile
-      ? [5, -5, 0]
-      : isTablet
-      ? [5.7, -6.6, 0]
-      : [8, -6, 0],
+        ? [5, -5, 0]
+        : isTablet
+          ? [5.7, -6.6, 0]
+          : [8, -6, 0],
     reactLogoPosition: isSmall
       ? [3.6, 6, 0]
       : isMobile
-      ? [6, 8, 0]
-      : isTablet
-      ? [5.5, 8, 0]
-      : [7.8, 8, 0],
+        ? [6, 8, 0]
+        : isTablet
+          ? [5.5, 8, 0]
+          : [7.8, 8, 0],
     ringPosition: isSmall
       ? [-7, 12.5, 0]
       : isMobile
-      ? [-10, 10, 0]
-      : isTablet
-      ? [-11.5, 15, 0]
-      : [-16.5, 15, 0],
+        ? [-10, 10, 0]
+        : isTablet
+          ? [-11.5, 15, 0]
+          : [-16.5, 15, 0],
     targetPosition: isSmall
       ? [-6, -10, -10]
       : isMobile
-      ? [-9, -10, -10]
-      : isTablet
-      ? [-9.5, -11, -10]
-      : [-13, -11, -10],
+        ? [-9, -10, -10]
+        : isTablet
+          ? [-9.5, -11, -10]
+          : [-13, -11, -10],
   };
 };
 

@@ -6,7 +6,7 @@ const App = () => {
   return (
     <Main>
       <Hero />
-      <About/>
+      <About />
     </Main>
   );
 };

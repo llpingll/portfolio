@@ -24,13 +24,11 @@ const Hero = () => {
   return (
     <Section className="stars">
       <Header />
-      <div>
+      <div className="title-container">
         <h1 className="hi-text">
           Hi! I&apos;m Lui <span className="waving-hand">🖐️</span>
         </h1>
-        <h1>
-          Building Projects & Brands
-        </h1>
+        <h1>Building Projects & Brands</h1>
       </div>
 
       <Canvas className="canvas">
@@ -63,6 +61,7 @@ const Hero = () => {
 };
 
 const Section = styled.section`
+  border: 1px solid #f30c0c;
   color: white;
   flex-grow: 1;
   display: flex;
@@ -95,20 +94,32 @@ const Section = styled.section`
     transform-origin: 70% 70%;
     display: inline-block;
   }
+
+  @media (max-width: 440px) {
+    scale: 0.7;
+  }
+
+  @media (min-width: 441px) and (max-width: 760px) {
+    scale: 0.8;
+  }
+
+  @media (min-width: 761px) and (max-width: 1024px) {
+    scale: 0.9;
+  }
 `;
 
 const ContactButton = styled.a`
   position: absolute;
   right: center;
-  bottom: 3rem;
+  bottom: 2rem;
 
   button {
     background-color: #1b1b1b;
     color: white;
     border: none;
-    font-size: var(--32px);
+    font-size: var(--24px);
     padding: 1rem 2rem;
-    border-radius: 1rem;
+    border-radius: 0.8rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
   }
@@ -124,12 +135,11 @@ const ContactButton = styled.a`
   }
 
   @media (min-width: 441px) and (max-width: 760px) {
-    bottom: 2rem;
     scale: 0.8;
   }
 
   @media (min-width: 761px) and (max-width: 1024px) {
-    bottom: 3rem;
+    scale: 0.8;
   }
 `;
 
