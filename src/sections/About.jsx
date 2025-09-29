@@ -5,47 +5,58 @@ import Globe from "react-globe.gl";
 const About = () => {
   return (
     <AboutContainer>
-        <AboutCard
-          title={"Hi, I'm Lui"}
-          body={"With 4 years of experience, I have honed my skills in frontend and backend development, with a focus on MERN/SERN tech stacks."}
-          img={"/assets/grid1.png"}
-        />
-        <AboutCard
-          title={"Tech Stack"}
-          body={"I'm experienced with a variety of languages, frameworks, and tools, with a focus on MERN/SERN tech stacks."}
-          img={"/assets/grid2.png"}
-        />
-        <AboutCard className="contact-card"
-          title={"Location and time zone"}
-          body={"I'm based in England, UK (GMT+0). I am open to remote work and can adapt to different time zones as needed."}
-          globe={
-            <Globe
-              // height={100%}
-              // width={100%}
-              backgroundColor="rgba(0, 0, 0, 0)"
-              backgroundImageOpacity={0.5}
-              showAtmosphere
-              showGraticules
-              globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
-              bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-            />
-          }
-        />
-        <AboutCard className="about-card"
-          title={"My Journey"}
-          body={"I love solving complex problems and creating efficient, scalable solutions. Programming isn't just my profession, it's my passion. I thrive on continuous learning and staying updated with the latest industry trends."}
-          img={"/assets/grid3.png"}
-        />
-        <AboutCard className="email-card"
-          title={"Contact me"}
-          body={"lui.duarte1@gmail.com"}
-          img={"/assets/grid4.png"}
-        />
+      <AboutCard
+        title={"Hi, I'm Lui"}
+        body={
+          "With 4 years of experience, I have honed my skills in frontend and backend development, with a focus on MERN/SERN tech stacks."
+        }
+        img={"/assets/grid1.png"}
+      />
+      <AboutCard
+        title={"Tech Stack"}
+        body={
+          "I'm experienced with a variety of languages, frameworks, and tools, with a focus on MERN/SERN tech stacks."
+        }
+        img={"/assets/grid2.png"}
+      />
+      <AboutCard
+        className="contact-card"
+        title={"Location and time zone"}
+        body={
+          "I'm based in England, UK (GMT+0). I am open to remote work and can adapt to different time zones as needed."
+        }
+        globe={
+          <Globe
+            // height={100%}
+            // width={100%}
+            backgroundColor="rgba(0, 0, 0, 0)"
+            backgroundImageOpacity={0.5}
+            showAtmosphere
+            showGraticules
+            globeImageUrl="//unpkg.com/three-globe/example/img/earth-day.jpg"
+            bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+          />
+        }
+      />
+      <AboutCard
+        className="about-card"
+        title={"My Journey"}
+        body={
+          "I love solving complex problems and creating efficient, scalable solutions. Programming isn't just my profession, it's my passion. I thrive on continuous learning and staying updated with the latest industry trends."
+        }
+        img={"/assets/grid3.png"}
+      />
+      <AboutCard
+        className="email-card"
+        title={"Contact me"}
+        body={"lui.duarte1@gmail.com"}
+        img={"/assets/grid4.png"}
+      />
     </AboutContainer>
-  )
-}
+  );
+};
 
-export default About
+export default About;
 
 const AboutContainer = styled.section`
   border: 1px solid #f30c0c;
@@ -72,7 +83,7 @@ const AboutContainer = styled.section`
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr;
     max-height: 80vh;
     .contact-card {
       grid-row: span 2;
@@ -80,12 +91,14 @@ const AboutContainer = styled.section`
     }
     .about-card {
       grid-column: span 2;
-      grid-row: span 2;
+      grid-row: span 3;
       // background-color: blue;
     }
     .email-card {
       grid-column: 3 / 4;
     }
+    .email-card {
+      grid-row: span 2;
+    }
   }
 `;
-

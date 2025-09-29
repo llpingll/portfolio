@@ -5,7 +5,7 @@ const AboutCard = ({title, body, img, className, globe}) => {
   return (
     <CardContainer className={className}>
         {img && <img src={img} alt={title} />}
-        {/* {globe && <div className="globe-container">{globe}</div>} */}
+        {globe && <div className="globe-container">{globe}</div>}
         <div>
             <p>{title}</p>
             <p>{body}</p>
@@ -30,8 +30,26 @@ const CardContainer = styled.div`
     min-height: 0;
 
     .globe-container {
-        max-width: 100%;
-    }
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+
+  .scene-container {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+}
 
     img {
         width: 100%;
