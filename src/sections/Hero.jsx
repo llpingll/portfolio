@@ -61,7 +61,6 @@ const Hero = () => {
 };
 
 const Section = styled.section`
-  border: 1px solid #f30c0c;
   color: white;
   flex-grow: 1;
   display: flex;
