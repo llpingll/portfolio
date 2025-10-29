@@ -6,12 +6,14 @@ const Projects = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedProject = myProjects[selectedIndex];
 
-  const goToPrevious = () => {
-    setSelectedIndex((prev) => (prev === 0 ? myProjects.length - 1 : prev - 1));
-  };
-
-  const goToNext = () => {
-    setSelectedIndex((prev) => (prev + 1) % myProjects.length);
+  const handleNavigation = (direction) => {
+    setSelectedIndex((prevIndex) => {
+      if (direction === "previous") {
+        return prevIndex === 0 ? myProjects.length - 1 : prevIndex - 1;
+      } else {
+        return prevIndex === myProjects.length - 1 ? 0 : prevIndex + 1;
+      }
+    });
   };
 
   return (
@@ -21,7 +23,7 @@ const Projects = () => {
         <div className="info">
           <img className="spotlight" src={selectedProject.spotlight} alt="background-image" />
           <img className="logo" src={selectedProject.logo} alt="project-logo" />
-          <div className="content">
+          <div className="content" key={selectedIndex}>
             <p className="title">{selectedProject.title}</p>
             <p>{selectedProject.desc}</p>
             <p>{selectedProject.subdesc}</p>
@@ -41,11 +43,11 @@ const Projects = () => {
             </a>
           </div>
           <div className="selection">
-            <button>
-              <img onClick={goToPrevious} src="/assets/left-arrow.png" alt="left-arrow-icon" />
+            <button type="button" onClick={() => handleNavigation("previous")}>
+              <img src="/assets/left-arrow.png" alt="left-arrow-icon" />
             </button>
-            <button>
-              <img onClick={goToNext} src="/assets/right-arrow.png" alt="right-arrow-icon" />
+            <button type="button" onClick={() => handleNavigation("next")}>
+              <img src="/assets/right-arrow.png" alt="right-arrow-icon" />
             </button>
           </div>
         </div>
@@ -105,6 +107,20 @@ const ProjectsContainer = styled.section`
     flex-direction: column;
     gap: 1.25rem;
     margin: 20px 0;
+    /* fade-in from top */
+    animation: fadeDown 4000ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+  }
+
+  @keyframes fadeDown {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .title {
