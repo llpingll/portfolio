@@ -43,6 +43,7 @@ const CardContainer = styled.div`
   justify-content: space-between;
   background-color: #0e0e10;
   min-height: 0;
+  line-height: 1.5rem;
 
   .globe-container {
     width: 100%;
