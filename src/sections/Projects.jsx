@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { myProjects } from "../constants/index.js";
 import { useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Center, OrbitControls } from "@react-three/drei";
+import { Suspense } from "react";
+import CanvasLoader from "../components/CanvasLoader.jsx";
+import DemoComputer from "../components/DemoComputer.jsx";
 
 const Projects = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -51,7 +56,20 @@ const Projects = () => {
             </button>
           </div>
         </div>
-        <div className="display"></div>
+        <div className="display">
+          <Canvas>
+            <ambientLight intensity={Math.PI} />
+            <directionalLight position={[10, 10, 5]} intensity={1} />
+            <Center>
+              <Suspense fallback={<CanvasLoader />}>
+                <group key={selectedIndex} scale={2} position={[0, -3, 0]} rotation={[0, -1.7, 0]}>
+                  <DemoComputer texture={selectedProject.texture} />
+                </group>
+              </Suspense>
+            </Center>
+            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+          </Canvas>
+        </div>
       </div>
     </ProjectsContainer>
   );

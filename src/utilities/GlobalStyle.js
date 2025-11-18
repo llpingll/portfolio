@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.cdnfonts.com/css/general-sans');
-
   :root{
     --16px: 1rem;
     --24px: 1.5rem;
