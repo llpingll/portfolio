@@ -47,7 +47,6 @@ const CardContainer = styled.div`
 
   .globe-container {
     width: 100%;
-    height: width;
     min-height: 0;
     min-width: 0;
     position: relative;

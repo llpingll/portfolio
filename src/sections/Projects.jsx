@@ -84,6 +84,10 @@ const ProjectsContainer = styled.section`
     justify-content: space-between;
     padding: 40px;
     margin-bottom: 80px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
 
   .head-text {
@@ -232,5 +236,11 @@ const ProjectsContainer = styled.section`
   .display {
     border: 1px solid #1c1c21;
     background-color: #0e0e10;
+
+    canvas {
+      width: 100% !important;
+      // height: 100% !important;
+      display: block;
+    }
   }
 `;

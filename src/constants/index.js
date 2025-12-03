@@ -79,18 +79,23 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "TypeScript",
+        path: "assets/typescript.png",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
+        name: "Node.js",
+        path: "/assets/nodejs.png",
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "MongoDB",
+        path: "/assets/mongodb.png",
+      },
+      {
+        id: 5,
+        name: "Styled Components",
+        path: "/assets/styled-components.png",
       },
     ],
   },
@@ -116,18 +121,13 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "Styled Components",
+        path: "/assets/styled-components.png",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "React Router",
+        path: "/assets/react-router.png",
       },
     ],
   },
@@ -149,24 +149,19 @@ export const myProjects = [
     spotlight: "/assets/spotlight3.png",
     tags: [
       {
-        id: 1,
-        name: "React.js",
-        path: "/assets/react.svg",
+        id: 3,
+        name: "javaScript",
+        path: "/assets/javascript.png",
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "CSS",
+        path: "assets/css.png",
       },
       {
-        id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
-      },
-      {
-        id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        id: 1,
+        name: "HTML",
+        path: "/assets/html5.png",
       },
     ],
   },
@@ -192,18 +187,18 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "TailwindCSS",
-        path: "assets/tailwindcss.png",
+        name: "Node.js",
+        path: "/assets/nodejs.png",
       },
       {
         id: 3,
-        name: "TypeScript",
-        path: "/assets/typescript.png",
+        name: "Express.js",
+        path: "assets/expressjs.png",
       },
       {
         id: 4,
-        name: "Framer Motion",
-        path: "/assets/framer.png",
+        name: "CSS",
+        path: "assets/css.png",
       },
     ],
   },
@@ -216,31 +211,31 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     cubePosition: isSmall
       ? [3.5, -5.7, 0]
       : isMobile
-        ? [5, -5, 0]
+        ? [5, -6.4, 0]
         : isTablet
           ? [5.7, -6.6, 0]
           : [8, -6, 0],
     reactLogoPosition: isSmall
       ? [3.6, 6, 0]
       : isMobile
-        ? [6, 8, 0]
+        ? [5, 7.5, 0]
         : isTablet
-          ? [5.5, 8, 0]
-          : [7.8, 8, 0],
+          ? [5.5, 7.5, 0]
+          : [7.8, 7.5, 0],
     ringPosition: isSmall
       ? [-7, 12.5, 0]
       : isMobile
-        ? [-10, 10, 0]
+        ? [-11, 15, 0]
         : isTablet
           ? [-11.5, 15, 0]
           : [-16.5, 15, 0],
     targetPosition: isSmall
       ? [-6, -10, -10]
       : isMobile
-        ? [-9, -10, -10]
+        ? [-8, -10, -10]
         : isTablet
-          ? [-9.5, -11, -10]
-          : [-13, -11, -10],
+          ? [-8.5, -10, -10]
+          : [-12, -10, -10],
   };
 };
 

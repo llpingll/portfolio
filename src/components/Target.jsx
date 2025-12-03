@@ -5,9 +5,12 @@ import { useGSAP } from "@gsap/react";
 
 const Target = (props) => {
   const targetRef = useRef();
-  const { scene } = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
-  );
+  // const { scene } = useGLTF(
+  //   "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf"
+  // );
+  const { scene } = useGLTF("/models/target.glb");
+
+  console.log(scene);
 
   useGSAP(() => {
     gsap.to(targetRef.current.position, {
@@ -19,7 +22,7 @@ const Target = (props) => {
   });
 
   return (
-    <mesh {...props} ref={targetRef} rotation={[0, Math.PI / 5, 0]} scale={1.5}>
+    <mesh {...props} ref={targetRef} rotation={[0, Math.PI + 2.6, 0.5]} scale={1.5}>
       <primitive object={scene} />
     </mesh>
   );
