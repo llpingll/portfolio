@@ -1,13 +1,53 @@
 import styled from "styled-components";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const handleChange = (e) => {};
+  const formRef = useRef();
+
+  const [loading, setLoading] = useState();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = ({ target: { name, value } }) => {
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      await emailjs.send(
+        "service_8wz22tb",
+        "template_a06hpyk",
+        {
+          from_name: form.name,
+          to_name: "Lui",
+          from_email: form.email,
+          to_email: "lui.duarte1@gmail.com",
+          message: form.message,
+        },
+        "rkKhAlJTSFg7m3uHU"
+      );
+
+      setLoading(false);
+      alert("Thank you. I will get back to you as soon as possible.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+      alert("Ahh, something went wrong. Please try again.");
+    }
+  };
 
   return (
     <ContactContainer>
-      {/* <p className="head-text">Contact me</p> */}
       <img src="/assets/terminal.png" alt="terminal-img" className="terminal-img" />
-      <form action="submit">
+      <form ref={formRef} onSubmit={handleSubmit}>
         <div>
           <p className="head-text">Let's Talk</p>
           <p className="body">
@@ -17,27 +57,41 @@ const Contact = () => {
         </div>
         <label className="body">
           Full Name
-          <input type="text" name="name" placeholder="John" onClick={handleChange}></input>
+          <input
+            value={form.name}
+            type="text"
+            name="name"
+            placeholder="John"
+            onChange={handleChange}
+            required
+          ></input>
         </label>
         <label className="body">
           Email Address
           <input
+            value={form.email}
             type="email"
             name="email"
             placeholder="John@mail.com"
-            onClick={handleChange}
+            onChange={handleChange}
+            required
           ></input>
         </label>
         <label className="body">
           Your Message
           <textarea
+            value={form.message}
             type="text"
             name="message"
             placeholder="Share your thoughts or inquiries..."
-            onClick={handleChange}
+            onChange={handleChange}
+            rows={5}
+            required
           ></textarea>
         </label>
-        <button type="submit">Send Message</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Send Message"}
+        </button>
       </form>
     </ContactContainer>
   );
@@ -116,7 +170,6 @@ const ContactContainer = styled.section`
 
   textarea {
     resize: vertical;
-    min-height: 10rem;
   }
 
   button {
