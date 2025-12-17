@@ -6,8 +6,8 @@ const NavItems = () => {
   return (
     <Navbar>
       {navLinks.map(({ id, name, href }) => (
-        <a href={href}>
-          <li key={id}>{name}</li>
+        <a href={href} key={id}>
+          <li>{name}</li>
         </a>
       ))}
     </Navbar>

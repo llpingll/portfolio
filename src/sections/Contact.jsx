@@ -104,6 +104,7 @@ const ContactContainer = styled.section`
   margin: 0 2.5rem;
   z-index: 0;
   position: relative;
+  margin-bottom: 3rem;
 
   .head-text {
     font-size: 2.5rem;
@@ -129,7 +130,7 @@ const ContactContainer = styled.section`
     gap: 2rem;
 
     div {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;

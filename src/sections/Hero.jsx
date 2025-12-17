@@ -52,8 +52,7 @@ const Hero = () => {
           <directionalLight position={[10, 10, 10]} intensity={1} />
         </Suspense>
       </Canvas>
-      <ContactButton href="#contact">
-        {" "}
+      <ContactButton>
         <a href="#about">
           <button>Lets work together</button>
         </a>
@@ -73,6 +72,7 @@ const Section = styled.section`
   & > div:first-of-type {
     text-align: center;
     padding: 2rem 0;
+  }
 
   .hi-text {
     font-weight: 500;
@@ -109,7 +109,7 @@ const Section = styled.section`
   }
 `;
 
-const ContactButton = styled.a`
+const ContactButton = styled.div`
   position: absolute;
   right: center;
   bottom: 2rem;

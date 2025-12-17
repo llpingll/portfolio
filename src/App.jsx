@@ -3,6 +3,7 @@ import styled from "styled-components";
 import About from "./sections/About.jsx";
 import Projects from "./sections/Projects.jsx";
 import Contact from "./sections/Contact.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <About />
       <Projects />
       <Contact />
+      <Footer />
     </Main>
   );
 };
