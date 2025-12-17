@@ -18,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
     // overflow: hidden;
   }
 
+  * {
+    scroll-behavior: smooth;
+  }
+
   main {
     max-width: 1280px;
     margin: 0 auto;

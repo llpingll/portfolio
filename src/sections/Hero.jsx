@@ -54,7 +54,9 @@ const Hero = () => {
       </Canvas>
       <ContactButton href="#contact">
         {" "}
-        <button>Lets work together</button>
+        <a href="#about">
+          <button>Lets work together</button>
+        </a>
       </ContactButton>
     </Section>
   );

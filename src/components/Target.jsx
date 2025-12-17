@@ -10,8 +10,6 @@ const Target = (props) => {
   // );
   const { scene } = useGLTF("/models/target.glb");
 
-  console.log(scene);
-
   useGSAP(() => {
     gsap.to(targetRef.current.position, {
       y: targetRef.current.position.y + 0.5,

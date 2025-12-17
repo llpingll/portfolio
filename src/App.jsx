@@ -2,6 +2,7 @@ import Hero from "./sections/Hero.jsx";
 import styled from "styled-components";
 import About from "./sections/About.jsx";
 import Projects from "./sections/Projects.jsx";
+import Contact from "./sections/Contact.jsx";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <Hero />
       <About />
       <Projects />
+      <Contact />
     </Main>
   );
 };

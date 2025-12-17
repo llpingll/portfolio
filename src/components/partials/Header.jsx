@@ -6,10 +6,9 @@ const NavItems = () => {
   return (
     <Navbar>
       {navLinks.map(({ id, name, href }) => (
-        <li key={id}>
-          {name}
-          <a href={href}></a>
-        </li>
+        <a href={href}>
+          <li key={id}>{name}</li>
+        </a>
       ))}
     </Navbar>
   );
@@ -36,10 +35,7 @@ const Header = () => {
       {isMobile ? (
         <>
           <button onClick={() => setIsOpen(!isOpen)}>
-            <img
-              src={`/assets/${isOpen ? "close" : "menu"}.svg`}
-              alt="toggle"
-            />
+            <img src={`/assets/${isOpen ? "close" : "menu"}.svg`} alt="toggle" />
           </button>
           {isOpen && <NavItems />}
         </>
@@ -82,6 +78,11 @@ const Navbar = styled.ul`
   list-style: none;
   gap: 1rem;
 
+  a {
+    text-decoration: none;
+    color: #a2a2a2ff;
+  }
+
   li:hover {
     cursor: pointer;
     color: white;
@@ -90,7 +91,7 @@ const Navbar = styled.ul`
   @media (max-width: 700px) {
     flex-direction: column;
     position: absolute;
-    top: 4.5rem;
+    top: 4rem;
     right: 1rem;
   }
 `;
