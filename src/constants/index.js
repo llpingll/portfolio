@@ -206,7 +206,7 @@ export const myProjects = [
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
+    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.07,
     deskPosition: isMobile ? [0.5, -2, 1] : [0.6, -2, 1],
     cubePosition: isSmall
       ? [3.5, -5.7, 0]
@@ -242,32 +242,22 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: "Framer",
-    pos: "Lead Web Developer",
-    duration: "2022 - Present",
+    name: "Reality AI Lab",
+    pos: "Software Engineer",
+    duration: "Dec 2024 - Apr 2025",
     title:
-      "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: "/assets/framer.svg",
+      "I contributed to an open-source educational platform as a full-stack developer in a React and Firebase environment, delivering core features across the application. This included engineering and integrating React components for AI-generated lesson modules, strengthening the platform’s educational content, and architecting secure serverless Firebase functions to handle sensitive API operations, preventing frontend exposure of private keys and improving overall security. I also developed an AI-powered translation agent using Supabase and OpenAI, significantly reducing the manual effort required to support multiple languages. Throughout the project, I collaborated with a fully remote Agile team via GitHub, participating in code reviews and asynchronous workflows to ensure reliable and timely feature delivery.",
+    icon: "/assets/realityai.avif",
     animation: "victory",
   },
   {
     id: 2,
-    name: "Figma",
-    pos: "Web Developer",
-    duration: "2020 - 2022",
+    name: "Cadamier",
+    pos: "Design Engineer",
+    duration: "2010 - Current",
     title:
-      "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: "/assets/figma.svg",
+      "I bring over a decade of professional experience as a design engineer across heavy industry, process engineering, mining, construction, food and beverage, oil and gas, air pollution control, and sheet metal fabrication. Throughout my career, I have led and contributed to projects spanning concept design through fabrication, commissioning, and as-built documentation, producing detailed 3D models, P&IDs, PFDs, general arrangements, isometrics, and fabrication drawings complete with bills of materials and costings. My work has included high-risk and regulated environments, such as flammable gas installations, pressure systems, and large-scale process plants, with a strong emphasis on accuracy, safety, and standards compliance. I am highly proficient across a wide range of CAD platforms—including AutoCAD, Plant 3D, Inventor, Solid Edge, SolidWorks, Tekla Structures, and CADWorx, and experienced in PLM/PDM workflows, design reviews, drawing standards, and mentoring other engineers, while collaborating closely with clients, suppliers, and multidisciplinary teams.",
+    icon: "/assets/acad.png",
     animation: "clapping",
-  },
-  {
-    id: 3,
-    name: "Notion",
-    pos: "Junior Web Developer",
-    duration: "2019 - 2020",
-    title:
-      "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: "/assets/notion.svg",
-    animation: "salute",
   },
 ];

@@ -88,7 +88,7 @@ const CardContainer = styled.div`
 
   .body,
   .icon-text {
-    color: #a2a2a2ff;
+    color: #afb0b6;
   }
 
   .icon-text {

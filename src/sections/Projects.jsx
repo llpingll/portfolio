@@ -107,7 +107,7 @@ const ProjectsContainer = styled.section`
     flex-direction: column;
     position: relative;
     padding: 40px;
-    color: #a2a2a2ff;
+    color: #afb0b6;
     gap: 20px;
     line-height: 1.5rem;
   }
@@ -179,7 +179,7 @@ const ProjectsContainer = styled.section`
       display: flex;
       text-decoration: none;
       align-items: center;
-      color: #a2a2a2ff;
+      color: #afb0b6;
       cursor: pointer;
 
       img {
@@ -239,7 +239,6 @@ const ProjectsContainer = styled.section`
 
     canvas {
       width: 100% !important;
-      // height: 100% !important;
       display: block;
     }
   }

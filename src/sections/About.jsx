@@ -93,7 +93,6 @@ const AboutContainer = styled.section`
     .about-card {
       grid-column: span 2;
       grid-row: span 3;
-      // background-color: blue;
     }
 
     .email-card {
