@@ -22,7 +22,7 @@ const Hero = () => {
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
-    <Section className="stars">
+    <Section className="stars" id="home">
       <Header />
       <div className="title-container">
         <h1 className="hi-text">
@@ -62,6 +62,7 @@ const Hero = () => {
 };
 
 const Section = styled.section`
+  align-items: center;
   color: white;
   flex-grow: 1;
   display: flex;
@@ -94,6 +95,11 @@ const Section = styled.section`
     animation-iteration-count: infinite;
     transform-origin: 70% 70%;
     display: inline-block;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
   }
 
   @media (max-width: 440px) {

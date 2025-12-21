@@ -14,18 +14,20 @@ const Experience = () => {
       <p className="head-text">My Work Experience</p>
       <div className="experience">
         <div className="canvas-container">
-          {/* <Canvas>
-            <ambientLight intensity={5} />
+          <Canvas>
+            <ambientLight intensity={2} />
             <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+            <directionalLight position={[10, 10, 10]} intensity={2} />
             <Suspense className="suspense" fallback={<CanvasLoader />}>
               <Developer
                 className="suspense"
-                position-y={-3}
-                scale={3}
+                position-y={-2.6}
+                rotation-x={Math.PI * 0.08}
+                scale={2.4}
                 animationName={animationName}
               />
             </Suspense>
-          </Canvas> */}
+          </Canvas>
         </div>
         <div className="info">
           {workExperiences.map((work) => (
@@ -79,7 +81,7 @@ const ExperienceContainer = styled.section`
     gap: 1.5rem;
     justify-content: space-between;
     padding: 2.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
     color: #afb0b6;
     height: 100% !important;
 
@@ -89,27 +91,24 @@ const ExperienceContainer = styled.section`
     }
 
     .canvas-container {
-      flex-basis: 300px;
-      max-width: 300px;
+      border: 1px solid #1c1c21;
+      display: flex;
+      align-items: center;
+      flex-basis: 350px;
+      max-width: 350px;
       background-color: #0e0e10;
       border-radius: 0.5rem;
 
       @media (max-width: 1024px) {
         max-width: 1024px;
-        min-height: 700px;
+        min-height: 680px;
       }
 
-      /* Target R3F's wrapper divs */
-      > div {
-        // max-height: 857.333px;
-      }
-
-      > div > div {
-      // height: 100% !important;
-      }
-
+      > div,
+      > div > div,
       canvas {
-      // max-height: 857.333px;
+        max-height: 857.333px;
+        // max-height: 100%;
       }
     }
 
@@ -119,6 +118,7 @@ const ExperienceContainer = styled.section`
       line-height: 1.5rem;
       background-color: #0e0e10;
       border-radius: 0.5rem;
+      border: 1px solid #1c1c21;
     }
 
     .work-item {

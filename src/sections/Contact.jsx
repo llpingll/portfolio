@@ -45,7 +45,7 @@ const Contact = () => {
   };
 
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <img src="/assets/terminal.png" alt="terminal-img" className="terminal-img" />
       <form ref={formRef} onSubmit={handleSubmit}>
         <div>

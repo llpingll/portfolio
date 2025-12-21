@@ -22,7 +22,7 @@ const Projects = () => {
   };
 
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id="work">
       <p className="head-text">My Selected Work</p>
       <div className="projects">
         <div className="info">
@@ -83,7 +83,7 @@ const ProjectsContainer = styled.section`
     gap: 1.5rem;
     justify-content: space-between;
     padding: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 
     @media (max-width: 1024px) {
       flex-direction: column;
@@ -100,6 +100,7 @@ const ProjectsContainer = styled.section`
   .info,
   .display {
     flex: 1 1 50%;
+    border-radius: 0.5rem;
   }
 
   .info {
@@ -110,6 +111,7 @@ const ProjectsContainer = styled.section`
     color: #afb0b6;
     gap: 20px;
     line-height: 1.5rem;
+    border-radius: 0.5rem;
   }
 
   .spotlight {
@@ -117,6 +119,7 @@ const ProjectsContainer = styled.section`
     position: absolute;
     top: 0;
     right: 0;
+    border-radius: 0.5rem;
   }
 
   .logo {

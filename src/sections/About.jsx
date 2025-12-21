@@ -40,7 +40,7 @@ const About = () => {
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
           />
         }
-        button={"Contact Me"}
+        buttonTxt={"Contact Me"}
       />
       <AboutCard
         className="about-card"

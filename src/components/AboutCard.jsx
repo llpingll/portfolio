@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-const AboutCard = ({ title, body, img, className, globe, button, icon, copiedIcon }) => {
+const AboutCard = ({ title, body, img, className, globe, buttonTxt, icon, copiedIcon }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -24,7 +24,11 @@ const AboutCard = ({ title, body, img, className, globe, button, icon, copiedIco
           <p className="body">{body}</p>
         )}
       </div>
-      {button && <button>{button}</button>}
+      {buttonTxt && (
+        <a href="#contact">
+          <button>{buttonTxt}</button>
+        </a>
+      )}
     </CardContainer>
   );
 };
@@ -108,6 +112,7 @@ const CardContainer = styled.div`
     border-radius: 0.8rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+    width: 100%;
   }
 
   button:hover {
