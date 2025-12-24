@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import Ballpit from "../components/Ballpit.jsx";
 
 const Contact = () => {
   const formRef = useRef();
@@ -46,7 +47,15 @@ const Contact = () => {
 
   return (
     <ContactContainer id="contact">
-      <img src="/assets/terminal.png" alt="terminal-img" className="terminal-img" />
+      <div className="ball-container">
+        <Ballpit
+          count={100}
+          gravity={0.01}
+          friction={0.9975}
+          wallBounce={0.95}
+          followCursor={false}
+        />
+      </div>
       <form ref={formRef} onSubmit={handleSubmit}>
         <div>
           <p className="head-text">Let's Talk</p>
@@ -105,21 +114,39 @@ const ContactContainer = styled.section`
   z-index: 0;
   position: relative;
   margin-bottom: 3rem;
+  border: 1px solid #1c1c21;
+  border-radius: 0.5rem;
+  background-color: #0e0e10;
+
+  .ball-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: "100%";
+    overflow: "hidden";
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+
+    & canvas {
+      border-radius: 0.5rem;
+    }
+  }
 
   .head-text {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #a2a2a2ff;
+    color: #e4e4e6;
   }
 
-  .terminal-img {
-    width: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    z-index: -1;
-    min-height: 916px;
-  }
+  // .terminal-img {
+  //   width: 100%;
+  //   position: absolute;
+  //   top: 0px;
+  //   left: 0;
+  //   z-index: -1;
+  //   min-height: 916px;
+  // }
 
   form {
     display: flex;
@@ -138,7 +165,7 @@ const ContactContainer = styled.section`
   }
 
   .body {
-    color: #a2a2a2ff;
+    color: #e4e4e6;
     font-size: 1.125rem;
   }
 
@@ -154,8 +181,11 @@ const ContactContainer = styled.section`
     border-radius: 0.5rem;
     border: none;
     line-height: 1.75rem;
-    background-color: #1c1c21;
-    color: #e4e4e6;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #afb0b6;
     padding: 0.5rem 1.25rem;
     margin-top: 0.75rem;
   }
@@ -180,12 +210,15 @@ const ContactContainer = styled.section`
     justify-content: center;
     gap: 0.75rem;
     border-radius: 0.5rem;
-    background-color: rgb(58 58 73 / var(--tw-bg-opacity));
+    // background-color: rgb(58 58 73 / var(--tw-bg-opacity));
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     font-size: 1.125rem;
     line-height: 1.75rem;
     padding: 0.5rem 1.25rem;
     color: #ffffff;
-    background-color: #3a3a49;
+    // background-color: #3a3a49;
     border: none;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
