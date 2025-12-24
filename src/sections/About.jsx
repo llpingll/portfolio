@@ -12,7 +12,7 @@ const About = () => {
         className={"intro-card"}
         title={"Hi, I'm Lui"}
         body={
-          "With 4 years of experience, I have honed my skills in frontend and backend development, with a focus on MERN/SERN tech stacks."
+          "With 4 years of experience, I have honed my skills in frontend and backend development, specializing in creating dynamic and responsive web applications."
         }
         img={"/assets/grid1.png"}
       />
@@ -22,7 +22,7 @@ const About = () => {
         body={
           "I'm experienced with a variety of languages, frameworks, and tools, with a focus on MERN/SERN tech stacks."
         }
-        img={"/assets/grid2.png"}
+        img={"/assets/grid5.png"}
       />
       <AboutCard
         className="contact-card"
@@ -109,7 +109,7 @@ const AboutContainer = styled.section`
 
     .tech-card img {
       object-fit: cover;
-      width: 85%;
+      width: 65%;
       object-position: center;
       margin: 0 auto;
     }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { navLinks } from "../../constants/index.js";
+import { navLinks } from "../constants/index.js";
 import { useState, useEffect } from "react";
 
 const NavItems = () => {
@@ -54,7 +54,11 @@ const HeaderContainer = styled.header`
   width: 100%;
   align-items: center;
   padding: 1.5rem 2rem;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
 
   h1 {
     font-size: var(--24px);

@@ -33,6 +33,11 @@ const FooterContainer = styled.footer`
     height: 3rem;
     border-radius: 50%;
     background-color: #1c1c21;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: rotate(360deg) scale(1.1);
+    }
   }
 
   img {

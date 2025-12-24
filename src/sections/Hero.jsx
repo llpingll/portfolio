@@ -11,7 +11,7 @@ import ReactLogo from "../components/ReactLogo.jsx";
 import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
-import Header from "../components/partials/Header.jsx";
+import Header from "../components/Header.jsx";
 // import { useControls } from "leva";
 
 const Hero = () => {
@@ -75,6 +75,40 @@ const Section = styled.section`
     padding: 2rem 0;
   }
 
+  .title-container {
+    margin-top: 5.5rem;
+
+    @media (max-width: 440px) {
+      h1 {
+        font-size: calc(var(--32px) * 0.7);
+      }
+
+      h1:nth-of-type(2) {
+        font-size: calc(var(--48px) * 0.7);
+      }
+    }
+
+    @media (min-width: 441px) and (max-width: 760px) {
+      h1 {
+        font-size: calc(var(--32px) * 0.8);
+      }
+
+      h1:nth-of-type(2) {
+        font-size: calc(var(--48px) * 0.8);
+      }
+    }
+
+    @media (min-width: 761px) and (max-width: 1024px) {
+      h1 {
+        font-size: calc(var(--32px) * 0.9);
+      }
+
+      h1:nth-of-type(2) {
+        font-size: calc(var(--48px) * 0.9);
+      }
+    }
+  }
+
   .hi-text {
     font-weight: 500;
   }
@@ -100,18 +134,6 @@ const Section = styled.section`
   canvas {
     width: 100% !important;
     height: 100% !important;
-  }
-
-  @media (max-width: 440px) {
-    scale: 0.7;
-  }
-
-  @media (min-width: 441px) and (max-width: 760px) {
-    scale: 0.8;
-  }
-
-  @media (min-width: 761px) and (max-width: 1024px) {
-    scale: 0.9;
   }
 `;
 
