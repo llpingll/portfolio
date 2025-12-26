@@ -1,8 +1,11 @@
-# React + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My interactive developer portfolio built with React Three Fiber
 
-Currently, two official plugins are available:
+- [React](https://reactjs.org/)
+- [React Three Fiber / Three.js](https://r3f.docs.pmnd.rs/getting-started/introduction)
+- [styled-components](https://styled-components.com/)
+- [@react-three/drei](https://drei.docs.pmnd.rs/getting-started/introduction)
+- [GSAP](https://gsap.com/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live Demo](https://astonishing-chebakia-6171.netlify.app/) :point_left:
