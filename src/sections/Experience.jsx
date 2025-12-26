@@ -64,8 +64,6 @@ const Experience = () => {
 export default Experience;
 
 const ExperienceContainer = styled.section`
-  // max-width: 1280px;
-
   .head-text {
     font-size: 2.5rem;
     font-weight: 600;

@@ -5,7 +5,6 @@ const CanvasLoader = () => {
 
   return (
     <Html as="div" center className="loader">
-      {/* <span></span> */}
       <p>{progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}</p>
     </Html>
   );
