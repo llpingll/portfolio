@@ -1,6 +1,6 @@
 # Portfolio
 
-My interactive developer portfolio built with React Three Fiber
+An interactive developer portfolio built with React and React Three Fiber, combining real-time 3D rendering, smooth animations, and a clean presentation of projects and experience.
 
 - [React](https://reactjs.org/)
 - [React Three Fiber / Three.js](https://r3f.docs.pmnd.rs/getting-started/introduction)
