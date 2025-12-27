@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import Ballpit from "../components/Ballpit.jsx";
 
@@ -23,16 +23,16 @@ const Contact = () => {
     try {
       setLoading(true);
       await emailjs.send(
-        "service_8wz22tb",
-        "template_a06hpyk",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Lui",
           from_email: form.email,
-          to_email: "lui.duarte1@gmail.com",
+          to_email: import.meta.env.VITE_CONTACT_EMAIL,
           message: form.message,
         },
-        "rkKhAlJTSFg7m3uHU"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
       setLoading(false);
