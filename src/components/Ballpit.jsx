@@ -326,13 +326,18 @@ function L() {
 
 function TouchStart(e) {
   if (e.touches.length > 0) {
-    e.preventDefault();
     A.x = e.touches[0].clientX;
     A.y = e.touches[0].clientY;
 
+    let handled = false;
+    const top = document.elementFromPoint(A.x, A.y);
+
     for (const [elem, t] of b) {
       const rect = elem.getBoundingClientRect();
-      if (D(rect)) {
+      // only handle if the canvas (elem) is the top-most element at the touch point
+      const isTop = top && (elem === top || elem.contains(top));
+      if (isTop && D(rect)) {
+        handled = true;
         t.touching = true;
         P(t, rect);
         if (!t.hover) {
@@ -342,20 +347,24 @@ function TouchStart(e) {
         t.onMove(t);
       }
     }
+
+    if (handled) e.preventDefault();
   }
 }
 
 function TouchMove(e) {
   if (e.touches.length > 0) {
-    e.preventDefault();
     A.x = e.touches[0].clientX;
     A.y = e.touches[0].clientY;
 
+    let handled = false;
+    const top = document.elementFromPoint(A.x, A.y);
+
     for (const [elem, t] of b) {
       const rect = elem.getBoundingClientRect();
-      P(t, rect);
-
-      if (D(rect)) {
+      const isTop = top && (elem === top || elem.contains(top));
+      if (isTop && D(rect)) {
+        handled = true;
         if (!t.hover) {
           t.hover = true;
           t.touching = true;
@@ -366,6 +375,8 @@ function TouchMove(e) {
         t.onMove(t);
       }
     }
+
+    if (handled) e.preventDefault();
   }
 }
 
@@ -669,7 +680,7 @@ function createBallpit(e, t = {}) {
   const r = new a();
   let c = false;
 
-  e.style.touchAction = "none";
+  e.style.touchAction = "auto";
   e.style.userSelect = "none";
   e.style.webkitUserSelect = "none";
 
@@ -719,7 +730,7 @@ function createBallpit(e, t = {}) {
   };
 }
 
-const Ballpit = ({ className = "", followCursor = true, ...props }) => {
+const Ballpit = ({ className = "ballpit", followCursor = true, ...props }) => {
   const canvasRef = useRef(null);
   const spheresInstanceRef = useRef(null);
 

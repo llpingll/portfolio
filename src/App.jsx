@@ -8,20 +8,32 @@ import Experience from "./sections/Experience.jsx";
 
 const App = () => {
   return (
-    <Main>
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
+    <MainContainer>
+      {/* <div></div> */}
+      {/* <Hero /> */}
+      {/* <About /> */}
+      {/* <Projects /> */}
+      {/* <Experience /> */}
       <Contact />
       <Footer />
-    </Main>
+    </MainContainer>
   );
 };
 
-const Main = styled.main`
-  display: flex;
-  flex-direction: column;
+const MainContainer = styled.main`
+  // display: flex;
+  // flex-direction: column;
+  // z-index: 7;
+  // min-height: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  // height: 100px;
+
+  & > div:first-of-type {
+    height: 100vh;
+    width: 100%;
+    border: 1px solid red;
+  }
 `;
 
 export default App;

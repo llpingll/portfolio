@@ -109,11 +109,10 @@ const Contact = () => {
 export default Contact;
 
 const ContactContainer = styled.section`
-  padding: 5rem 0;
-  margin: 0 2.5rem;
+  padding: 5rem 0 0;
+  margin: 0 2.5rem 5rem;
   z-index: 0;
   position: relative;
-  margin-bottom: 3rem;
   border: 1px solid #1c1c21;
   border-radius: 0.5rem;
   background-color: #0e0e10;
@@ -122,14 +121,13 @@ const ContactContainer = styled.section`
     position: absolute;
     top: 0;
     left: 0;
-    height: "100%";
-    overflow: "hidden";
-    width: 100%;
     height: 100%;
-    z-index: -2;
+    width: 100%;
+    z-index: -1;
 
     & canvas {
       border-radius: 0.5rem;
+      height: 100%;
     }
   }
 
@@ -139,15 +137,6 @@ const ContactContainer = styled.section`
     color: #e4e4e6;
   }
 
-  // .terminal-img {
-  //   width: 100%;
-  //   position: absolute;
-  //   top: 0px;
-  //   left: 0;
-  //   z-index: -1;
-  //   min-height: 916px;
-  // }
-
   form {
     display: flex;
     flex-direction: column;
@@ -155,6 +144,7 @@ const ContactContainer = styled.section`
     margin: 0 auto;
     padding: 2rem 2.5rem;
     gap: 2rem;
+    z-index: 1;
 
     div {
       margin-bottom: 2rem;

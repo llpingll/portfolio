@@ -10,21 +10,32 @@ const GlobalStyle = createGlobalStyle`
     --300px: 18.75rem;
   }
 
-  html, body, main, #root {
-    // height: 100%;
-    margin: 0;
-    padding: 0;
+  // *,
+  // *::before,
+  // *::after {
+  //   box-sizing: border-box;
+  //   padding: 0;
+  //   margin: 0;
+  //   word-wrap: break-word;
+  // }
+
+  // html, body, main, #root {
+  //   // height: 100%;
+  //   // max-width: 100%;
+  //   // margin: 0;
+  //   padding: 0;
+  //   background-color: black;
+  //   // overflow: hidden;
+  // }
+
+  html, body, #root {
     background-color: black;
-    // overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
 
   * {
     scroll-behavior: smooth;
-  }
-
-  main {
-    max-width: 1280px;
-    margin: 0 auto;
   }
 
   body {
@@ -44,15 +55,6 @@ const GlobalStyle = createGlobalStyle`
   body, html, main, #root {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    word-wrap: break-word;
   }
 `;
 
