@@ -8,4 +8,4 @@ An interactive developer portfolio built with React and React Three Fiber, combi
 - [@react-three/drei](https://drei.docs.pmnd.rs/getting-started/introduction)
 - [GSAP](https://gsap.com/)
 
-[Live Demo](https://694ef2a6ca7514d21f24b6de--lui-three-portfolio.netlify.app/) :point_left:
+[Live Demo](https://lui-three-portfolio.netlify.app/) :point_left:
