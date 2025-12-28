@@ -195,7 +195,7 @@ const ProjectsContainer = styled.section`
 
     @media (max-width: 550px) {
       flex-direction: column;
-      // justify-content: flex-start;
+      gap: 1.5rem;
 
       & > div {
         justify-content: flex-start;
@@ -255,6 +255,7 @@ const ProjectsContainer = styled.section`
     canvas {
       width: 100% !important;
       display: block;
+      min-height: 380px;
     }
   }
 `;

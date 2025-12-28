@@ -50,7 +50,6 @@ const HeaderContainer = styled.header`
   color: #a2a2a2ff;
   display: flex;
   justify-content: space-between;
-  /* background-color: red; */
   width: 100%;
   align-items: center;
   padding: 1.5rem 2rem;
@@ -61,7 +60,7 @@ const HeaderContainer = styled.header`
   z-index: 2;
 
   h1 {
-    font-size: var(--24px);
+    font-size: var(--32px);
   }
 
   h1:hover {
@@ -69,11 +68,24 @@ const HeaderContainer = styled.header`
     color: white;
   }
 
+  @media (max-width: 440px) {
+    h1 {
+      font-size: calc(var(--24px) * 0.85);
+    }
+
+    padding: 1rem;
+  }
+
   button {
     background-color: transparent;
     width: 1.8rem;
     border: none;
     cursor: pointer;
+  }
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 `;
 

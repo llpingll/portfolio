@@ -70,22 +70,23 @@ const Section = styled.section`
   align-items: center;
   height: 100vh;
 
-  & > div:first-of-type {
-    text-align: center;
-    padding: 2rem 0;
-  }
-
   .title-container {
     margin-top: 5.5rem;
+    text-align: center;
+    padding: 2rem 0;
 
     @media (max-width: 440px) {
       h1 {
-        font-size: calc(var(--32px) * 0.7);
+        font-size: calc(var(--32px) * 0.63);
       }
 
       h1:nth-of-type(2) {
-        font-size: calc(var(--48px) * 0.7);
+        font-size: calc(var(--48px) * 0.64);
+        margin-top: 0.75rem;
       }
+
+      padding: 0;
+      margin-bottom: -1.5rem;
     }
 
     @media (min-width: 441px) and (max-width: 760px) {
@@ -111,10 +112,6 @@ const Section = styled.section`
 
   .hi-text {
     font-weight: 500;
-  }
-
-  h1 {
-    font-size: var(--32px);
   }
 
   h1:nth-of-type(2) {

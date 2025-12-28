@@ -8,7 +8,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 const About = () => {
   return (
     <AboutContainer id="about">
-      {/* <AboutCard
+      <AboutCard
         className={"intro-card"}
         title={"Hi, I'm Lui"}
         body={
@@ -57,7 +57,7 @@ const About = () => {
         img={"/assets/grid4.png"}
         icon={<FontAwesomeIcon icon={faCopy} />}
         copiedIcon={<FontAwesomeIcon icon={faCheck} className="copied-icon" />}
-      /> */}
+      />
     </AboutContainer>
   );
 };
@@ -82,7 +82,7 @@ const AboutContainer = styled.section`
   }
 
   @media (min-width: 1024px) {
-    border: 1px solid #2de200ff;
+    border: 1px solid #1c1c21;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 3fr 1fr 1fr 1fr;
     max-height: 950px;

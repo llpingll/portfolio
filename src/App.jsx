@@ -10,7 +10,7 @@ const App = () => {
   return (
     <MainContainer>
       {/* <div></div> */}
-      {/* <Hero /> */}
+      <Hero />
       {/* <About /> */}
       <Projects />
       <Experience />
@@ -21,13 +21,8 @@ const App = () => {
 };
 
 const MainContainer = styled.main`
-  // display: flex;
-  // flex-direction: column;
-  // z-index: 7;
-  // min-height: 0;
   max-width: 1280px;
   margin: 0 auto;
-  // height: 100px;
 
   & > div:first-of-type {
     height: 100vh;
