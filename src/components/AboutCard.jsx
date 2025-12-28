@@ -13,7 +13,7 @@ const AboutCard = ({ title, body, img, className, globe, buttonTxt, icon, copied
   return (
     <CardContainer className={className}>
       {img && <img src={img} alt={title} />}
-      {globe && <div className="globe-container">{globe}</div>}
+      {/* {globe && <div className="globe-container">{globe}</div>} */}
       <div>
         <p>{title}</p>
         {icon ? (
@@ -48,6 +48,10 @@ const CardContainer = styled.div`
   background-color: #0e0e10;
   min-height: 0;
   line-height: 1.5rem;
+
+  @media (max-width: 640px) {
+    padding: 1rem;
+  }
 
   .globe-container {
     width: 100%;

@@ -69,7 +69,7 @@ const AboutContainer = styled.section`
   gap: 1.5rem;
   width: 100%;
   max-width: 1280px;
-  padding: 5rem 2.5rem;
+  padding: 5rem 1.25rem;
 
   @media (min-width: 765px) {
     grid-template-columns: repeat(2, 1fr);
