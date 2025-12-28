@@ -13,8 +13,8 @@ const AboutCard = ({ title, body, img, className, globe, buttonTxt, icon, copied
   return (
     <CardContainer className={className}>
       {img && <img src={img} alt={title} />}
-      {/* {globe && <div className="globe-container">{globe}</div>} */}
-      <div>
+      {globe && <div className="globe-container">{globe}</div>}
+      <div className="content">
         <p>{title}</p>
         {icon ? (
           <p onClick={handleCopy} className="icon-text">
@@ -23,12 +23,12 @@ const AboutCard = ({ title, body, img, className, globe, buttonTxt, icon, copied
         ) : (
           <p className="body">{body}</p>
         )}
+        {buttonTxt && (
+          <a href="#contact">
+            <button>{buttonTxt}</button>
+          </a>
+        )}
       </div>
-      {buttonTxt && (
-        <a href="#contact">
-          <button>{buttonTxt}</button>
-        </a>
-      )}
     </CardContainer>
   );
 };
@@ -54,23 +54,20 @@ const CardContainer = styled.div`
   }
 
   .globe-container {
-    width: 100%;
-    min-height: 0;
-    min-width: 0;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .scene-container {
-      width: 100% !important;
-      height: 100% !important;
-      min-height: 0;
-      min-width: 0;
-      position: relative;
+  @media (max-width: 420px) {
+    .globe-container * {
+      width: 260px;
     }
 
-    canvas {
-      width: 100% !important;
-      height: 100% !important;
-      display: block;
+    .globe-container > div > div > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -83,15 +80,15 @@ const CardContainer = styled.div`
     min-height: 0;
   }
 
-  > div {
+  .content {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-  }
 
-  > div :first-child {
-    font-size: var(--24px);
-    font-weight: 600;
+    & > p:first-child {
+      font-size: var(--24px);
+      font-weight: 600;
+    }
   }
 
   .body,
@@ -117,6 +114,7 @@ const CardContainer = styled.div`
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     width: 100%;
+    margin-top: 1rem;
   }
 
   button:hover {

@@ -12,7 +12,6 @@ import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
 import Header from "../components/Header.jsx";
-// import { useControls } from "leva";
 
 const Hero = () => {
   const isSmall = useMediaQuery({ maxWidth: 440 });
@@ -32,14 +31,13 @@ const Hero = () => {
       </div>
 
       <Canvas className="canvas">
-        {/* <Stars /> */}
         <Suspense fallback={<CanvasLoader />}>
           <PerspectiveCamera makeDefault position={[0, 0, 20]} />
           <HeroCamera isMobile={isMobile}>
             <HackerRoom
               scale={sizes.deskScale}
               position={sizes.deskPosition}
-              rotation={[0.5, Math.PI, 0]}
+              rotation={[0.4, Math.PI, 0]}
             />
           </HeroCamera>
           <group>
@@ -74,6 +72,7 @@ const Section = styled.section`
     margin-top: 5.5rem;
     text-align: center;
     padding: 2rem 0;
+    margin-bottom: -2rem;
 
     @media (max-width: 440px) {
       h1 {

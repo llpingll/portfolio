@@ -32,6 +32,8 @@ const About = () => {
         }
         globe={
           <Globe
+            height={350}
+            width={326}
             backgroundColor="rgba(0, 0, 0, 0)"
             backgroundImageOpacity={0.5}
             showAtmosphere
@@ -69,15 +71,26 @@ const AboutContainer = styled.section`
   gap: 1.5rem;
   width: 100%;
   max-width: 1280px;
-  padding: 5rem 1.25rem;
+  padding: 0 1.25rem;
+  margin: 5rem 0;
+
+  .tech-card img {
+    width: 60%;
+    margin: 0 auto;
+  }
 
   @media (min-width: 765px) {
     grid-template-columns: repeat(2, 1fr);
-    border: 1px solid #0000e2ff;
 
     .about-card img {
       object-fit: cover;
       height: 100%;
+    }
+
+    .tech-card img {
+      width: 70%;
+      height: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -110,8 +123,9 @@ const AboutContainer = styled.section`
     }
 
     .tech-card img {
-      object-fit: cover;
-      width: 65%;
+      object-fit: contain;
+      width: 80%;
+      height: 100%;
       object-position: center;
       margin: 0 auto;
     }

@@ -9,13 +9,12 @@ import Experience from "./sections/Experience.jsx";
 const App = () => {
   return (
     <MainContainer>
-      {/* <div></div> */}
-      {/* <Hero /> */}
+      <Hero />
       <About />
-      {/* <Projects /> */}
-      {/* <Experience /> */}
-      {/* <Contact /> */}
-      {/* <Footer /> */}
+      <Projects />
+      <Experience />
+      <Contact />
+      <Footer />
     </MainContainer>
   );
 };
@@ -23,12 +22,6 @@ const App = () => {
 const MainContainer = styled.main`
   max-width: 1280px;
   margin: 0 auto;
-
-  & > div:first-of-type {
-    height: 100vh;
-    width: 100%;
-    border: 1px solid red;
-  }
 `;
 
 export default App;
