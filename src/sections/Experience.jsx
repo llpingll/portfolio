@@ -65,12 +65,17 @@ export default Experience;
 
 const ExperienceContainer = styled.section`
   .head-text {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 600;
     color: #a2a2a2ff;
     padding: 0 2.5rem;
     height: 100% !important;
     min-height: 0;
+
+    @media (max-width: 640px) {
+      font-size: 1.875rem;
+      padding: 0 1.25rem;
+    }
   }
 
   .experience {
@@ -86,6 +91,10 @@ const ExperienceContainer = styled.section`
     @media (max-width: 1024px) {
       flex-direction: column;
       max-width: 1024px;
+    }
+
+    @media (max-width: 640px) {
+      padding: 2.5rem 1.25rem;
     }
 
     .canvas-container {
@@ -117,6 +126,10 @@ const ExperienceContainer = styled.section`
       background-color: #0e0e10;
       border-radius: 0.5rem;
       border: 1px solid #1c1c21;
+
+      @media (max-width: 640px) {
+        padding: 1.25rem 0.625rem;
+      }
     }
 
     .work-item {
@@ -127,6 +140,10 @@ const ExperienceContainer = styled.section`
       cursor: pointer;
       border-radius: 0.5rem;
       transition: all 0.3s ease-in-out;
+
+      @media (max-width: 640px) {
+        padding: 0 0.625rem;
+      }
     }
 
     .work-item:hover {

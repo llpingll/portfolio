@@ -91,7 +91,7 @@ const ProjectsContainer = styled.section`
   }
 
   .head-text {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 600;
     color: #a2a2a2ff;
     padding: 0 40px;
@@ -256,6 +256,18 @@ const ProjectsContainer = styled.section`
       width: 100% !important;
       display: block;
       min-height: 380px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects,
+    .info {
+      padding: 2.5rem 1.25rem;
+    }
+
+    .head-text {
+      font-size: 1.875rem;
+      padding: 0 1.25rem;
     }
   }
 `;

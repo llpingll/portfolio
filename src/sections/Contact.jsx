@@ -117,6 +117,10 @@ const ContactContainer = styled.section`
   border-radius: 0.5rem;
   background-color: #0e0e10;
 
+  @media (max-width: 640px) {
+    margin: 0 1.25rem 5rem;
+  }
+
   .ball-container {
     position: absolute;
     top: 0;
@@ -132,9 +136,13 @@ const ContactContainer = styled.section`
   }
 
   .head-text {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 600;
     color: #e4e4e6;
+
+    @media (max-width: 640px) {
+      font-size: 1.875rem;
+    }
   }
 
   form {
