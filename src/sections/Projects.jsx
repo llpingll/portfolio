@@ -169,6 +169,9 @@ const ProjectsContainer = styled.section`
         height: 2.5rem;
         background-color: #f5f5f51a;
         border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         img {
           width: 60%;
@@ -187,6 +190,15 @@ const ProjectsContainer = styled.section`
 
       img {
         max-width: 12px;
+      }
+    }
+
+    @media (max-width: 550px) {
+      flex-direction: column;
+      // justify-content: flex-start;
+
+      & > div {
+        justify-content: flex-start;
       }
     }
   }
