@@ -71,8 +71,8 @@ const AboutContainer = styled.section`
   gap: 1.5rem;
   width: 100%;
   max-width: 1280px;
-  padding: 0 1.25rem;
   margin: 5rem 0;
+  padding: 0 1.25rem;
 
   .tech-card img {
     width: 60%;
@@ -95,11 +95,11 @@ const AboutContainer = styled.section`
   }
 
   @media (min-width: 1024px) {
-    border: 1px solid #1c1c21;
+    padding: 0 2.5rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 3fr 1fr 1fr 1fr;
     max-height: 950px;
-    margin: 0 auto;
+    margin: 5rem 0;
 
     .contact-card {
       grid-row: span 2;
