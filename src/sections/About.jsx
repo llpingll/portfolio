@@ -79,6 +79,10 @@ const AboutContainer = styled.section`
     margin: 0 auto;
   }
 
+  .email-card {
+    text-align: center;
+  }
+
   @media (min-width: 765px) {
     grid-template-columns: repeat(2, 1fr);
 

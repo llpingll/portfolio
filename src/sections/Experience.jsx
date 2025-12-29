@@ -14,7 +14,7 @@ const Experience = () => {
       <p className="head-text">My Work Experience</p>
       <div className="experience">
         <div className="canvas-container">
-          <Canvas>
+          <Canvas camera={{ position: [0, 2, 6], fov: 50 }} dpr={[1, 2]}>
             <ambientLight intensity={2} />
             <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
             <directionalLight position={[10, 10, 10]} intensity={2} />
@@ -22,7 +22,6 @@ const Experience = () => {
               <Developer
                 className="suspense"
                 position-y={-2.6}
-                rotation-x={Math.PI * 0.08}
                 scale={2.4}
                 animationName={animationName}
               />
@@ -115,7 +114,11 @@ const ExperienceContainer = styled.section`
       > div > div,
       canvas {
         max-height: 857.333px;
-        // max-height: 100%;
+
+        @media (max-width: 1024px) {
+          max-height: 100%;
+          min-height: 680px;
+        }
       }
     }
 
@@ -189,14 +192,11 @@ const ExperienceContainer = styled.section`
       flex-grow: 1;
       display: flex;
       justify-content: center;
-      // height: 100%;
-      // border: 1px solid #df1313ff;
     }
 
     .bar {
       flex: 1 1 100%;
       max-width: 2px;
-      // height: 100%;
       margin-top: 0.8rem;
       background-color: #1c1c21;
     }
