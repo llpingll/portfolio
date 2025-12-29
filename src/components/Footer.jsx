@@ -20,12 +20,14 @@ const FooterContainer = styled.footer`
   align-items: center;
   padding: 1.5rem 2.5rem 1rem;
   border-top: 1px solid #333;
+  gap: 1rem;
 
   p {
     color: #62646c;
   }
 
   a {
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,5 +46,11 @@ const FooterContainer = styled.footer`
     width: 50%;
     height: 50%;
     cursor: pointer;
+  }
+
+  @media (max-width: 440px) {
+    padding: 1.25rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 `;
