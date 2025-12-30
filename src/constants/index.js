@@ -1,3 +1,4 @@
+// Data constants for the portfolio site
 export const navLinks = [
   {
     id: 1,
@@ -25,34 +26,10 @@ export const clientReviews = [
   {
     id: 1,
     name: "Emily Johnson",
-    position: "Marketing Director at GreenLeaf",
+    position: "Marketing Director at Mock",
     img: "assets/review1.png",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-  },
-  {
-    id: 2,
-    name: "Mark Rogers",
-    position: "Founder of TechGear Shop",
-    img: "assets/review2.png",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.",
-  },
-  {
-    id: 3,
-    name: "John Dohsas",
-    position: "Project Manager at UrbanTech ",
-    img: "assets/review3.png",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-  },
-  {
-    id: 4,
-    name: "Ether Smith",
-    position: "CEO of BrightStar Enterprises",
-    img: "assets/review4.png",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.",
+      "Working with Lui was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
   },
 ];
 
@@ -204,6 +181,30 @@ export const myProjects = [
   },
 ];
 
+export const workExperiences = [
+  {
+    id: 1,
+    name: "Reality AI Lab",
+    pos: "Software Engineer",
+    duration: "Dec 2024 - Apr 2025",
+    title:
+      "I contributed to an open-source educational platform as a full-stack developer in a React and Firebase environment, delivering core features across the application. This included engineering and integrating React components for AI-generated lesson modules, strengthening the platform’s educational content, and architecting secure serverless Firebase functions to handle sensitive API operations, preventing frontend exposure of private keys and improving overall security. I also developed an AI-powered translation agent using Supabase and OpenAI, significantly reducing the manual effort required to support multiple languages. Throughout the project, I collaborated with a fully remote Agile team via GitHub, participating in code reviews and asynchronous workflows to ensure reliable and timely feature delivery.",
+    icon: "/assets/realityai.avif",
+    animation: "victory",
+  },
+  {
+    id: 2,
+    name: "Cadamier",
+    pos: "Design Engineer",
+    duration: "2010 - Current",
+    title:
+      "I bring over a decade of professional experience as a design engineer across heavy industry, process engineering, mining, construction, food and beverage, oil and gas, air pollution control, and sheet metal fabrication. Throughout my career, I have led and contributed to projects spanning concept design through fabrication, commissioning, and as-built documentation, producing detailed 3D models, P&IDs, PFDs, general arrangements, isometrics, and fabrication drawings complete with bills of materials and costings. My work has included high-risk and regulated environments, such as flammable gas installations, pressure systems, and large-scale process plants, with a strong emphasis on accuracy, safety, and standards compliance. I am highly proficient across a wide range of CAD platforms—including AutoCAD, Plant 3D, Inventor, Solid Edge, SolidWorks, Tekla Structures, and CADWorx, and experienced in PLM/PDM workflows, design reviews, drawing standards, and mentoring other engineers, while collaborating closely with clients, suppliers, and multidisciplinary teams.",
+    icon: "/assets/acad.png",
+    animation: "clapping",
+  },
+];
+
+// Calculate sizes and positions based on device type
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
@@ -239,25 +240,22 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
   };
 };
 
-export const workExperiences = [
-  {
-    id: 1,
-    name: "Reality AI Lab",
-    pos: "Software Engineer",
-    duration: "Dec 2024 - Apr 2025",
-    title:
-      "I contributed to an open-source educational platform as a full-stack developer in a React and Firebase environment, delivering core features across the application. This included engineering and integrating React components for AI-generated lesson modules, strengthening the platform’s educational content, and architecting secure serverless Firebase functions to handle sensitive API operations, preventing frontend exposure of private keys and improving overall security. I also developed an AI-powered translation agent using Supabase and OpenAI, significantly reducing the manual effort required to support multiple languages. Throughout the project, I collaborated with a fully remote Agile team via GitHub, participating in code reviews and asynchronous workflows to ensure reliable and timely feature delivery.",
-    icon: "/assets/realityai.avif",
-    animation: "victory",
-  },
-  {
-    id: 2,
-    name: "Cadamier",
-    pos: "Design Engineer",
-    duration: "2010 - Current",
-    title:
-      "I bring over a decade of professional experience as a design engineer across heavy industry, process engineering, mining, construction, food and beverage, oil and gas, air pollution control, and sheet metal fabrication. Throughout my career, I have led and contributed to projects spanning concept design through fabrication, commissioning, and as-built documentation, producing detailed 3D models, P&IDs, PFDs, general arrangements, isometrics, and fabrication drawings complete with bills of materials and costings. My work has included high-risk and regulated environments, such as flammable gas installations, pressure systems, and large-scale process plants, with a strong emphasis on accuracy, safety, and standards compliance. I am highly proficient across a wide range of CAD platforms—including AutoCAD, Plant 3D, Inventor, Solid Edge, SolidWorks, Tekla Structures, and CADWorx, and experienced in PLM/PDM workflows, design reviews, drawing standards, and mentoring other engineers, while collaborating closely with clients, suppliers, and multidisciplinary teams.",
-    icon: "/assets/acad.png",
-    animation: "clapping",
-  },
-];
+// Data constants for animations
+import { keyframes } from "styled-components";
+
+export const wave = keyframes`
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60%, 100% { transform: rotate(0deg); }
+`;
+
+// Breakpoint constants for responsive design
+export const breakpoints = {
+  small: "440px",
+  mobile: "760px",
+  tablet: "1024px",
+};
