@@ -19,6 +19,11 @@ const GlobalStyle = createGlobalStyle`
     word-wrap: break-word;
   }
 
+  canvas {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
   html, body, #root {
     background-color: black;
     padding: 0;
