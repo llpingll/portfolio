@@ -65,29 +65,32 @@ const Hero = () => {
 export default Hero;
 
 const Section = styled.section`
-  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   align-items: center;
   color: white;
-  position: relative;
+  overflow: hidden;
 
   canvas {
     width: 100% !important;
     height: 100% !important;
+    display: block;
   }
 `;
 
 const HeroContent = styled.div`
-  margin-top: 5.5rem;
+  margin-top: 5rem;
   text-align: center;
-  padding: 2rem 0;
-  margin-bottom: -2rem;
+  padding: 0;
+  margin-bottom: -1.5rem;
 
   @media (max-width: ${breakpoints.small}) {
     padding: 0;
-    margin-bottom: -1.5rem;
+    margin-bottom: -2.5rem;
+    margin-top: 3.75rem;
   }
 `;
 
@@ -110,7 +113,7 @@ const Title = styled.h1`
 const Subtitle = styled.h1`
   font-size: var(--48px);
   color: #a2a2a2ff;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 
   @media (max-width: ${breakpoints.tablet}) {
     font-size: calc(var(--48px) * 0.9);

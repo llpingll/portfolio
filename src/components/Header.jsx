@@ -79,6 +79,9 @@ const HeaderContainer = styled.header`
     h1 {
       font-size: calc(var(--24px) * 0.85);
     }
+
+    & > div {
+    padding: 1rem
   }
 
   button {

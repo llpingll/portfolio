@@ -217,7 +217,7 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
           ? [5.7, -6.6, 0]
           : [8, -6, 0],
     reactLogoPosition: isSmall
-      ? [3.6, 6, 0]
+      ? [3.4, 6, 0]
       : isMobile
         ? [5, 7.5, 0]
         : isTablet
