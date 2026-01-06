@@ -4,32 +4,27 @@ import Globe from "react-globe.gl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { breakpoints } from "../constants/index.js";
 
 const About = () => {
   return (
     <AboutContainer id="about">
       <AboutCard
-        className={"intro-card"}
-        title={"Hi, I'm Lui"}
-        body={
-          "With 4 years of experience, I have honed my skills in frontend and backend development, specializing in creating dynamic and responsive web applications."
-        }
-        img={"/assets/grid1.png"}
+        className="intro-card"
+        title="Hi, I'm Lui"
+        body="With 4 years of experience, I have honed my skills in frontend and backend development, specializing in creating dynamic and responsive web applications."
+        img="/assets/grid1.png"
       />
       <AboutCard
         className="tech-card"
-        title={"Tech Stack"}
-        body={
-          "I'm experienced with a variety of languages, frameworks, and tools, with a focus on MERN/SERN tech stacks."
-        }
-        img={"/assets/grid5.png"}
+        title="Tech Stack"
+        body="I'm experienced with a variety of languages, frameworks, and tools, with a focus on MERN/SERN tech stacks."
+        img="/assets/grid5.png"
       />
       <AboutCard
         className="contact-card"
-        title={"Location and time zone"}
-        body={
-          "I'm based in England, UK (GMT+1). I am open to remote work and can adapt to different time zones as needed."
-        }
+        title="Location and time zone"
+        body="I'm based in England, UK (GMT+1). I am open to remote work and can adapt to different time zones as needed."
         globe={
           <Globe
             height={350}
@@ -42,21 +37,19 @@ const About = () => {
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
           />
         }
-        buttonTxt={"Contact Me"}
+        buttonTxt="Contact Me"
       />
       <AboutCard
         className="about-card"
-        title={"My Journey"}
-        body={
-          "I love solving complex problems and creating efficient, scalable solutions. Programming isn't just my profession, it's my passion. I thrive on continuous learning and staying updated with the latest industry trends."
-        }
-        img={"/assets/grid3.png"}
+        title="My Journey"
+        body="I love solving complex problems and creating efficient, scalable solutions. Programming isn't just my profession, it's my passion. I thrive on continuous learning and staying updated with the latest industry trends."
+        img="/assets/grid3.png"
       />
       <AboutCard
         className="email-card"
-        title={"Contact me"}
-        body={"lui.duarte1@gmail.com"}
-        img={"/assets/grid4.png"}
+        title="Contact me"
+        body="lui.duarte1@gmail.com"
+        img="/assets/grid4.png"
         icon={<FontAwesomeIcon icon={faCopy} />}
         copiedIcon={<FontAwesomeIcon icon={faCheck} className="copied-icon" />}
       />
@@ -67,12 +60,16 @@ const About = () => {
 export default About;
 
 const AboutContainer = styled.section`
+  --gap: 1.5rem;
+  --max-width: 1280px;
+  --padding: 0 1.25rem;
+
   display: grid;
-  gap: 1.5rem;
+  gap: var(--gap);
   width: 100%;
-  max-width: 1280px;
+  max-width: var(--max-width);
   margin: 5rem 0;
-  padding: 0 1.25rem;
+  padding: var(--padding);
 
   .tech-card img {
     width: 60%;
@@ -98,7 +95,7 @@ const AboutContainer = styled.section`
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: ${breakpoints.tablet}) {
     padding: 0 2.5rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 3fr 1fr 1fr 1fr;

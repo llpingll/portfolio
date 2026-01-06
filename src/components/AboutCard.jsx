@@ -11,31 +11,27 @@ const AboutCard = ({ title, body, img, className, globe, buttonTxt, icon, copied
   };
 
   return (
-    <CardContainer className={className}>
-      {img && <img src={img} alt={title} />}
-      {globe && <div className="globe-container">{globe}</div>}
-      <div className="content">
-        <p>{title}</p>
+    <Card className={className}>
+      {img && <CardImage src={img} alt={`${title} illustration`} />}
+      {globe && <GlobeContainer>{globe}</GlobeContainer>}
+      <CardContent>
+        <CardTitle>{title}</CardTitle>
         {icon ? (
-          <p onClick={handleCopy} className="icon-text">
+          <CopyText onClick={handleCopy} role="button" tabIndex={0}>
             {copied ? copiedIcon : icon} {body}
-          </p>
+          </CopyText>
         ) : (
-          <p className="body">{body}</p>
+          <CardBody>{body}</CardBody>
         )}
-        {buttonTxt && (
-          <a href="#contact">
-            <button>{buttonTxt}</button>
-          </a>
-        )}
-      </div>
-    </CardContainer>
+        {buttonTxt && <ContactButton href="#contact">{buttonTxt}</ContactButton>}
+      </CardContent>
+    </Card>
   );
 };
 
 export default AboutCard;
 
-const CardContainer = styled.div`
+const Card = styled.div`
   padding: 1.75rem;
   height: 100%;
   display: flex;
@@ -48,76 +44,73 @@ const CardContainer = styled.div`
   background-color: #0e0e10;
   min-height: 0;
   line-height: 1.5rem;
+`;
 
-  @media (max-width: 640px) {
-    padding: 1rem;
-  }
+const CardImage = styled.img`
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 100%;
+  display: block;
+  min-height: 0;
+`;
 
-  .globe-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+const GlobeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: 420px) {
-    .globe-container * {
-      width: 260px;
-    }
-
-    .globe-container > div > div > div {
+    & > div > div > div {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 100%;
-    display: block;
-    min-height: 0;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
-    & > p:first-child {
-      font-size: var(--24px);
-      font-weight: 600;
+    & * {
+      width: 260px;
     }
   }
+`;
 
-  .body,
-  .icon-text {
-    color: #afb0b6;
-  }
+const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
 
-  .icon-text {
-    cursor: pointer;
-  }
+const CardTitle = styled.p`
+  font-size: var(--24px);
+  font-weight: 600;
+`;
 
-  > div .copied-icon {
+const CopyText = styled.p`
+  color: #afb0b6;
+  cursor: pointer;
+
+  & .copied-icon {
     color: #00d10e;
   }
+`;
 
-  button {
-    background-color: #1b1b1b;
-    color: white;
-    border: none;
-    font-size: var(--20px);
-    padding: 1rem 2rem;
-    border-radius: 0.8rem;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 1rem;
-  }
+const CardBody = styled.p`
+  color: #afb0b6;
+`;
 
-  button:hover {
+const ContactButton = styled.a`
+  background-color: #1b1b1b;
+  color: white;
+  border: none;
+  font-size: var(--20px);
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  text-decoration: none;
+  text-align: center;
+
+  &:hover {
     background-color: white;
     color: #1b1b1b;
   }
